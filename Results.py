@@ -1,5 +1,3 @@
-from unittest import result
-
 class Results():
 
     def results(selector):
