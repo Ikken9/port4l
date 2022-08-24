@@ -1,15 +1,25 @@
 class Results():
 
-    def results(selector):
-        result_list, mode = selector
+    def report(selector):
+        print("Port4l scan report:\n")
+        result, mode = selector
+        open, closed, filtered = result
         if mode == "single":
-            if len(result_list) == 0:
-                print("[*] Port is closed")
-            else:
-                print(f"[*] Port {result_list[0]} is open")
+            if len(open) == 1 and len(closed) == 0 and len(filtered) == 0:
+                print(f"Port {open[0]} is open")
+            elif len(open) == 0 and len(closed) == 1 and len(filtered) == 0:
+                print(f"Port {closed[0]} is closed")
+            elif len(open) == 0 and len(closed) == 0 and len(filtered) == 1:
+                print(f"Port {filtered[0]} is filtered")
         elif mode == "ranged":    
-            if len(result_list) == 0:
-                print("[*] No ports are open")    
-            elif len(result_list) > 0:    
-                for port in result_list:
-                    print(f"[*] Port {port} is open")
+            print(f"{len(closed)} closed ports\n{len(filtered)} filtered ports\n")
+            if len(open) == 0:
+                print("No ports open")    
+            elif len(open) > 0: 
+                for port in open:
+                    print(f"Port {port} is open")
+        elif mode == "ping":
+            if result == True:
+                print("Target is up")
+            elif result == False:
+                print("Target isn't up")
