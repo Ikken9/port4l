@@ -1,7 +1,7 @@
 class Results():
 
     def report(selector):
-        print("Port4l scan report:\n")
+        print("\nPort4l scan report:\n")
         result, mode = selector
         open, closed, filtered = result
         if mode == "single":
