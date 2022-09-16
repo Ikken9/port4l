@@ -2,5 +2,6 @@
 
 from Logic import Logic
 
-class Main():
+
+class Main:
     Logic()

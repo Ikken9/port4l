@@ -1,14 +1,15 @@
-import socket, sys
-
+import socket
 from tqdm import tqdm
+
 
 class TCPConnect:
 
+    @staticmethod
     def single_scan(host, port):
+        open = []
+        closed = []
+        filtered = []
         try:
-            open = []
-            closed = []
-            filtered = []
             scansocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             scansocket.settimeout(float(1))
             result = scansocket.connect_ex((host, int(port)))
@@ -23,12 +24,13 @@ class TCPConnect:
             return open, closed, filtered
         return open, closed, filtered
 
+    @staticmethod
     def range_scan(host, port_min, port_max):
         open = []
         closed = []
         filtered = []
         try:
-            for port in tqdm(range(port_min, port_max+1)):
+            for port in tqdm(range(port_min, port_max + 1)):
                 scansocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 scansocket.settimeout(float(1))
                 result = scansocket.connect_ex((host, int(port)))

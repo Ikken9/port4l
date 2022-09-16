@@ -1,5 +1,6 @@
-class Results():
+class Results:
 
+    @staticmethod
     def report(selector):
         print("\nPort4l scan report:\n")
         result, mode = selector
@@ -19,7 +20,7 @@ class Results():
                 for port in open:
                     print(f"Port {port} is open")
         elif mode == "ping":
-            if result == True:
+            if result is True:
                 print("Target is up")
-            elif result == False:
+            elif result is False:
                 print("Target isn't up")
