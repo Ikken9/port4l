@@ -16,7 +16,7 @@ Feel free to fork the repo.
 (I will write this later).
 
 ## 📜 License
-port4l is under GNU GPL-3.0 License. See LICENSE for more information.
+port4l is under [GNU GPL-3.0 License](LICENSE.md).
 
 ## ✏️ Author
 port4l is created by Ikken9.
