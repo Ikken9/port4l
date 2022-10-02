@@ -13,7 +13,7 @@ scanners that works better (f.e.: nmap).
 Feel free to fork the repo.
 
 ### Usage
-(I will write whis).
+(I will write this later).
 
 ## 📜 License
 port4l is under GNU GPL-3.0 License. See LICENSE for more information.
